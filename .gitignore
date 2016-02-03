@@ -1,0 +1,6 @@
+*.map
+*.list
+*.dump
+*.elf
+*.o
+*.mod
