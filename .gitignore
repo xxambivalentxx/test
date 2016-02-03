@@ -3,4 +3,4 @@
 *.dump
 *.elf
 *.o
-*.mod
+*.m
