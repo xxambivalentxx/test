@@ -1,0 +1,18 @@
+/* ENTRY(_boot) */
+
+MEMORY {
+     ram : ORIGIN = 0x0000, LENGTH = 10M
+}
+
+/* kinda unnecessary but mmkay */
+
+SECTIONS {
+    .text : { *(.text*) } > ram
+    .bss : {
+		bss_start = .;
+		*(.bss*) 
+		bss_end = .;
+	} > ram
+    .rodata : { *(.rodata*) } > ram
+    .data : { *(.data*) } > ram
+}

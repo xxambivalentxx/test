@@ -1,0 +1,58 @@
+
+build/test.mod:     file format elf32-littlearm
+
+
+Disassembly of section .text:
+
+00000000 <do_something>:
+   0:	e92d4010 	push	{r4, lr}
+   4:	e1a04000 	mov	r4, r0
+   8:	ea000001 	b	14 <do_something+0x14>
+   c:	e3540000 	cmp	r4, #0
+  10:	1a000005 	bne	2c <do_something+0x2c>
+  14:	e1a00004 	mov	r0, r4
+  18:	ebfffffe 	bl	0 <do_nothing>
+  1c:	e3500000 	cmp	r0, #0
+  20:	bafffff9 	blt	c <do_something+0xc>
+  24:	e3a00001 	mov	r0, #1
+  28:	e8bd8010 	pop	{r4, pc}
+  2c:	e3a00002 	mov	r0, #2
+  30:	e8bd8010 	pop	{r4, pc}
+
+00000034 <more_nothing>:
+  34:	e3500000 	cmp	r0, #0
+  38:	0a000001 	beq	44 <more_nothing+0x10>
+  3c:	e3a00002 	mov	r0, #2
+  40:	e12fff1e 	bx	lr
+  44:	eafffffe 	b	0 <do_something>
+
+Disassembly of section .comment:
+
+00000000 <.comment>:
+   0:	43434700 	movtmi	r4, #14080	; 0x3700
+   4:	4128203a 	teqmi	r8, sl, lsr r0
+   8:	20686372 	rsbcs	r6, r8, r2, ror r3
+   c:	6f706552 	svcvs	0x00706552
+  10:	6f746973 	svcvs	0x00746973
+  14:	20297972 	eorcs	r7, r9, r2, ror r9
+  18:	2e332e35 	mrccs	14, 1, r2, cr3, cr5, {1}
+  1c:	Address 0x000000000000001c is out of bounds.
+
+
+Disassembly of section .ARM.attributes:
+
+00000000 <.ARM.attributes>:
+   0:	00003741 	andeq	r3, r0, r1, asr #14
+   4:	61656100 	cmnvs	r5, r0, lsl #2
+   8:	01006962 	tsteq	r0, r2, ror #18
+   c:	0000002d 	andeq	r0, r0, sp, lsr #32
+  10:	4d524105 	ldfmie	f4, [r2, #-20]	; 0xffffffec
+  14:	36373131 			; <UNDEFINED> instruction: 0x36373131
+  18:	2d465a4a 	vstrcs	s11, [r6, #-296]	; 0xfffffed8
+  1c:	07060053 	smlsdeq	r6, r3, r0, r0
+  20:	01090108 	tsteq	r9, r8, lsl #2
+  24:	0412030a 	ldreq	r0, [r2], #-778	; 0xfffffcf6
+  28:	01180117 	tsteq	r8, r7, lsl r1
+  2c:	011a0119 	tsteq	sl, r9, lsl r1
+  30:	021e011c 	andseq	r0, lr, #28, 2
+  34:	01440122 	cmpeq	r4, r2, lsr #2
