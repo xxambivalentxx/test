@@ -1,5 +1,5 @@
 extern int do_nothing(unsigned int none);
-int more_nothing(unsigned int nothing);
+int more_nothing(int nothing);
 
 int do_something(unsigned int some) {
 	int ret = 0;
@@ -13,7 +13,7 @@ int do_something(unsigned int some) {
 	return ret;
 }
 
-int more_nothing(unsigned int nothing) {
+int more_nothing(int nothing) {
 	int ret = 0;
 	
 	if (nothing < 0) {
